@@ -490,7 +490,7 @@ function click(ev) {
 
 function dblclick(ev) {
 	var currenttext = ev.target.querySelector('span').innerHTML;
-	let bingotext = prompt("Bingofeld ändern:", currenttext);
+	let bingotext = prompt("Change text:", currenttext);
 	if(bingotext != null) {
 		ev.target.querySelector('span').innerHTML = bingotext;
 		resizeText();

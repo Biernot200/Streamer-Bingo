@@ -16,6 +16,10 @@ click **Interact** to open control view.
 <img src="https://github.com/Biernot200/Streamer-Bingo/blob/main/docs/obs-browsersource.jpg" alt="drawing" width="720"/>
 </p>
 
+<p align="center">
+<img src="https://github.com/Biernot200/Streamer-Bingo/blob/main/docs/interact.png" alt="drawing" width="417"/>
+</p>
+
 ## How to use
 
 * Check field by left mouse click
