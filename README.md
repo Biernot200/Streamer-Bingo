@@ -31,7 +31,21 @@ click **Interact** to open control view.
 * Shuffle fields
 * Add up to 4 checkable extra fields per field
 * Save to Browser cache
+* Load from cache
 * Delete from cache
 * Empty cache
 * Copy to clipboard
 * Import as txt file
+
+## Sources
+* jQuery 3.7.1 -> https://jquery.com/download
+* jQuery contextMenu(2.x) -> https://swisnl.github.io/jQuery-contextMenu
+*	dist/font
+*	dist/jquery.contextMenu.css
+*	dist/jquery.contextMenu.js
+*	dist/jquery.ui.position.js
+* jQuery textfill -> https://github.com/jquery-textfill/jquery-textfill
+	dist/jquery.textfill.js
+	
+## License
+Streamer-Bingo is open source an free to use.
