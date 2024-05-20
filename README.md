@@ -8,7 +8,8 @@ A web-based Bingo game, made to use as browsersource for OBS (Open Broadcaster S
 
 ## Preview
 
-* [Preview Demo][preview-demo]
+* [Preview Demo on github.io][preview-demo]
+
 [preview-demo]: https://htmlpreview.github.io/?https://github.com/Biernot200/Streamer-Bingo/blob/main/Bingo.html
 
 ## Installation
