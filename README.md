@@ -45,7 +45,7 @@ click **Interact** to open control view.
 *	dist/jquery.contextMenu.js
 *	dist/jquery.ui.position.js
 * jQuery textfill -> https://github.com/jquery-textfill/jquery-textfill
-	dist/jquery.textfill.js
+*	dist/jquery.textfill.js
 	
 ## License
 Streamer-Bingo is open source an free to use.
