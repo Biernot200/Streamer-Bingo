@@ -38,7 +38,7 @@ click **Interact** to open control view.
 * Import as txt file
 
 <p align="center">
-<img src="https://github.com/Biernot200/Streamer-Bingo/blob/main/docs/bingo2.jpg" alt="drawing" width="500"/>
+<img src="https://github.com/Biernot200/Streamer-Bingo/blob/main/docs/bingo2.jpg" alt="drawing" width="600"/>
 </p>
 
 ## Sources
