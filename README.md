@@ -37,6 +37,10 @@ click **Interact** to open control view.
 * Copy to clipboard
 * Import as txt file
 
+<p align="center">
+<img src="https://github.com/Biernot200/Streamer-Bingo/blob/main/docs/bingo2.jpg" alt="drawing" width="400"/>
+</p>
+
 ## Sources
 * jQuery 3.7.1 -> https://jquery.com/download
 * jQuery contextMenu(2.x) -> https://swisnl.github.io/jQuery-contextMenu
