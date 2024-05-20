@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
 <title>Bingo</title>
 <meta charset="utf-8">
@@ -173,7 +173,7 @@ function contextMenu() {
 					break;
 				case "save":
 					if(LoadedBingo) {
-						if(confirm("'" + LoadedBingo + "' überschreiben?") == true) {
+						if(confirm("Overwrite '" + LoadedBingo + "'?") == true) {
 							saveBingo(LoadedBingo);
 						}
 						break;
@@ -182,7 +182,7 @@ function contextMenu() {
 					setTimeout(function(){saveasBingo();}, 100);
 					break;
 				case "delete":
-					if(confirm("'" + LoadedBingo + "' wirklich löschen?") == true) {
+					if(confirm("Do you really want to delete '" + LoadedBingo + "'?") == true) {
 						deleteBingo();
 					}
 					break;
@@ -226,7 +226,7 @@ function readFile(input) {
 	let extension = file.name.split('.').pop().toLowerCase();
 
 	if(extension != "txt") {
-		alert("Nur '.txt.' Dateien können importiert werden!");
+		alert("Only '.txt.' files allowed!");
 		return
 	}
 	let reader = new FileReader();
@@ -235,7 +235,7 @@ function readFile(input) {
 	reader.onload = function() {
 		const bingofields = reader.result.split("\n");
 		if(bingofields.length < 25) {
-			alert("Bingodatei enthält nur " + bingofields.length + " Einträge.");
+			alert("File contains only " + bingofields.length + " entries, 25 required.");
 		}else {
 			let list = document.getElementById("Bingo").querySelectorAll('.box');
 			for(let i=0; i<25; i++) {
@@ -349,13 +349,13 @@ function saveBingo(name) {
 }
 
 function saveasBingo() {
-	let filename = prompt("Speichern als:");
+	let filename = prompt("Save as:");
 	if(filename != null && filename != "") {
 		if(validateFilename(filename)) {
 			saveBingo(filename);
 			LoadedBingo = filename;
 		}else {
-			alert("Ungültiger Name!");
+			alert("Invalid name!");
 		}
 	}
 }
