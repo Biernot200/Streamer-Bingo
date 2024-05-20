@@ -9,8 +9,8 @@ A web-based Bingo game, made for use as browsersource for OBS (Open Broadcaster 
 ## Installation
 
 Download the package, add a browesersource and choose **"Bingo.html"** as local file.
-Set width and height to **1100** for best textscaling.
-Click **Interact** to open control view.
+Set width and height to **1100** for best textscaling. Confirm settings and
+click **Interact** to open control view.
 
 <p align="center">
 <img src="https://github.com/Biernot200/Streamer-Bingo/blob/main/docs/obs-browsersource.jpg" alt="drawing" width="720"/>
@@ -24,6 +24,7 @@ Click **Interact** to open control view.
 * Enter context menu by right mouse click
 
 ## Features
+* Text autoscale on each field
 * Edit fields
 * Swap fields
 * Reset Bingo
