@@ -6,6 +6,9 @@
 
 A web-based Bingo game, made to use as browsersource for OBS (Open Broadcaster Software).
 
+## Preview
+[preview demo]: https://htmlpreview.github.io/?https://github.com/Biernot200/Streamer-Bingo/blob/main/Bingo.html
+
 ## Installation
 
 Download the package, add a browsersource and choose **"Bingo.html"** as local file.
