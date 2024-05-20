@@ -203,18 +203,18 @@ function contextMenu() {
 		items: {
 			"reset": {name: "Reset Bingo"},
 			"shuffle": {name: "Shuffle"},
-			"setof": {name: "Extra Felder", "items": {"setof0": {name: "keine"}, "setof1": {name: "1"},"setof2": {name: "2"},"setof3": {name: "3"},"setof4": {name: "4"}}},
+			"setof": {name: "Extra Fields", "items": {"setof0": {name: "keine"}, "setof1": {name: "1"},"setof2": {name: "2"},"setof3": {name: "3"},"setof4": {name: "4"}}},
 			"sep1": "---------",
-			"load": {name: "Laden", "items": bingofields, disabled: nosavefiles},
-			"save": {name: "Speichern", disabled: ((LoadedBingo === undefined) ? true : false)},
-			"saveas": {name: "Speichern als..."},
-			"delete": {name: "Bingo Löschen", icon: "delete", disabled: ((LoadedBingo === undefined) ? true : false)},
+			"load": {name: "Load", "items": bingofields, disabled: nosavefiles},
+			"save": {name: "Save", disabled: ((LoadedBingo === undefined) ? true : false)},
+			"saveas": {name: "Save as..."},
+			"delete": {name: "Delete Bingo", icon: "delete", disabled: ((LoadedBingo === undefined) ? true : false)},
 			"sep2": "---------",
-			"import": {name: "Importieren"},
-			"export": {name: "Exportieren", "items": {"asfile": {name: "Datei", disabled: true}, "toclb": {name: "Zwischenablage"}}},
+			"import": {name: "Import"},
+			"export": {name: "Export", "items": {"asfile": {name: "File", disabled: true}, "toclb": {name: "Clipboard"}}},
 			"sep3": "---------",
-			"delall": {name: "Speicher zurücksetzen", "items": {"memclear": {name: "Speicher wirklich löschen?", icon: "delete"}}},
-			"quit": {name: "Schließen", id: "q", icon: function(){
+			"delall": {name: "Empty cache", "items": {"memclear": {name: "confirm?", icon: "delete"}}},
+			"quit": {name: "Close", id: "q", icon: function(){
 				return 'context-menu-icon context-menu-icon-quit';
 			}}
 		}
