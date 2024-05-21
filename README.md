@@ -5,6 +5,7 @@
 </p>
 
 A web-based Bingo game, made to use as browsersource for OBS (Open Broadcaster Software).
+100% offline use, no data will stored or transfered external.
 
 ## Preview
 
