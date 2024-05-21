@@ -4,8 +4,8 @@
 <img src="https://github.com/Biernot200/Streamer-Bingo/blob/main/docs/bingo.jpg" alt="drawing" width="400"/>
 </p>
 
-A web-based Bingo game, made to use as browsersource for OBS (Open Broadcaster Software).
-100% offline use, no data will stored or transfered external. 
+A web-based Bingo game, made to use as browsersource for OBS (Open Broadcaster Software).  
+100% offline use, no data will stored or transfered external.
 
 ## Preview
 
@@ -15,7 +15,7 @@ A web-based Bingo game, made to use as browsersource for OBS (Open Broadcaster S
 
 ## Installation
 
-Download the package, add a browsersource and choose **"Bingo.html"** as local file.
+Download the package, add a browsersource and choose **"Bingo.html"** as local file.  
 Set width and height to **1100** for best textscaling. Confirm settings and
 click **Interact** to open control view.
 
