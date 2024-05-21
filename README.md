@@ -40,6 +40,7 @@ click **Interact** to open control view.
 * Reset Bingo
 * Shuffle fields
 * Add up to 4 checkable extra fields per field
+* Style Themes
 * Save to Browser cache
 * Load from cache
 * Delete from cache
@@ -47,6 +48,9 @@ click **Interact** to open control view.
 * Copy to clipboard
 * Import as txt file
 
+<p align="center">
+<img src="https://github.com/Biernot200/Streamer-Bingo/blob/main/docs/themes.jpg" alt="drawing" width="600"/>
+</p>
 <p align="center">
 <img src="https://github.com/Biernot200/Streamer-Bingo/blob/main/docs/bingo2.jpg" alt="drawing" width="600"/>
 </p>

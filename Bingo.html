@@ -4,7 +4,97 @@
 <title>Bingo</title>
 <meta charset="utf-8">
 <link href="jquery.contextMenu.css" rel="stylesheet">
-<style>	
+<style>
+:root {
+	--background-color: white;
+	--highlight-color: #FEF200;
+	--text-color: black;
+	--text-highlight: black;
+	--set-color: #DCDCDE;
+	--set-highlight-color: yellowgreen;
+}
+
+html[data-theme='Yellow'] {
+	--background-color: white;
+	--highlight-color: #FEF200;
+	--text-color: black;
+	--text-highlight: black;
+	--set-color: #DCDCDE;
+	--set-highlight-color: yellowgreen;
+}
+
+html[data-theme='Pink'] {
+	--background-color: white;
+	--highlight-color: #F7BCCA;
+	--text-color: black;
+	--text-highlight: #333133;
+	--set-color: #DCDCDE;
+	--set-highlight-color: #AE1F67;
+}
+
+html[data-theme='Red'] {
+	--background-color: white;
+	--highlight-color: #8F001D;
+	--text-color: black;
+	--text-highlight: #F0F0F1;
+	--set-color: #DCDCDE;
+	--set-highlight-color: #560011;
+}
+
+html[data-theme='Purple'] {
+	--background-color: white;
+	--highlight-color: #6A5776;
+	--text-color: #2e2633;
+	--text-highlight: white;
+	--set-color: #DCDCDE;
+	--set-highlight-color: #45394d;
+}
+
+html[data-theme='Lime'] {
+	--background-color: white; /* #c9ff05; */
+	--highlight-color: #bff205;	/*#324001;*/
+	--text-color: #324001;
+	--text-highlight: #324001;
+	--set-color: #DCDCDE;
+	--set-highlight-color: #465902;
+}
+
+html[data-theme='Light-Blue'] {
+	--background-color: #E2F6F7;
+	--highlight-color: #7DCEF7;
+	--text-color: #161637;
+	--text-highlight: #0a0a1a;
+	--set-color: #DCDCDE;
+	--set-highlight-color: #324001;
+}
+
+html[data-theme='Bluish-Grey'] {
+	--background-color: #E7ECF2;
+	--highlight-color: #A1AABB;
+	--text-color: #161637;
+	--text-highlight: #0a0a1a;
+	--set-color: #bac1d9;
+	--set-highlight-color: #526373;
+}
+
+html[data-theme='Green'] {
+	--background-color: #BBDCCB;
+	--highlight-color: #1D2327;
+	--text-color: #1D2327;
+	--text-highlight: #BBDCCB;
+	--set-color: #DCDCDE;
+	--set-highlight-color: yellowgreen;
+}
+
+html[data-theme='Light-Brown'] {
+	--background-color: #D9CBC2;
+	--highlight-color: #968C83;
+	--text-color: #373334;
+	--text-highlight: #F0F0F1;
+	--set-color: #DCDCDE;
+	--set-highlight-color: #937152;
+}
+
 body {
 	font-family: 'Arial';
 	font-size: 1.5em;
@@ -38,6 +128,7 @@ span {
 
 .box {
 	position: relative;
+	background-color: var(--background-color);
 	width: calc((100vh - 8px) / 5);
 	height: calc((100vh - 8px) / 5);
 	padding: 4%;
@@ -47,18 +138,19 @@ span {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: white;
+	color: var(--text-color);
 	text-align: center;
 	font-size: 5vw;
 	user-select: none;
 }
 
 .checked {
-	background-color: #FEF200;
+	background-color: var(--highlight-color);
+	color: var(--text-highlight);
 }
 
 .setchecked {
-	background-color: yellowgreen !important;
+	background-color: var(--set-highlight-color) !important;
 }
 
 .swap {
@@ -89,7 +181,7 @@ input[type=file] {
 	width: 20%;
 	margin: 0 2%;
 	border-radius: 999px;
-	background-color: #DCDCDE;
+	background-color: var(--set-color);
 }
 </style>
 </head>
@@ -135,18 +227,41 @@ var LoadedBingo;
 var bingofields;
 var nosavefiles = true;
 var selectedfield;
+var themes;
 
 $(function() {
 	resizeText();
 	readStorage();
 	updateListener();
 	contextMenu();
+	window.addEventListener("resize", resizeText);
+	let theme = localStorage.getItem("BingoTheme");
+	if(theme) {
+		loadTheme(theme);
+	}
 });
 
+function thememenu() {
+	let themenames = ["Yellow", "Pink", "Purple", "Red", "Lime", "Light-Blue", "Bluish-Grey", "Green", "Light-Brown"];
+	let n = themenames.length;
+	themes = new Object();
+
+	for(i=0; i<n; i++) {
+		let theme = themenames[i];
+		themes[i] = {"name": themenames[i], callback: function(key, options, ev) {loadTheme(theme);}};
+	}
+}
+
+function loadTheme(theme) {
+	document.documentElement.setAttribute('data-theme', theme);
+	localStorage.setItem("BingoTheme", theme);
+}
+
 function contextMenu() {
+	thememenu();
 	$.contextMenu({
 		selector: '.box',
-		autoHide: true,
+		autoHide: false,
 		callback: function(key, options, ev) {
 			//console.log(key);
 			switch(key) {
@@ -204,6 +319,7 @@ function contextMenu() {
 			"reset": {name: "Reset Bingo"},
 			"shuffle": {name: "Shuffle"},
 			"setof": {name: "Extra Fields", "items": {"setof0": {name: "keine"}, "setof1": {name: "1"},"setof2": {name: "2"},"setof3": {name: "3"},"setof4": {name: "4"}}},
+			"theme": {name: "Theme", "items": themes},
 			"sep1": "---------",
 			"load": {name: "Load", "items": bingofields, disabled: nosavefiles},
 			"save": {name: "Save", disabled: ((LoadedBingo === undefined) ? true : false)},
@@ -302,6 +418,10 @@ function copyClipboard() {
 function readStorage() {
     bingofields = new Object();
     keys = Object.keys(localStorage);
+	var index = keys.indexOf('BingoTheme');
+	if(index !== -1) {
+		keys.splice(index, 1);
+	}
     let n = keys.length;
 	//console.log(n);
 	if(n > 0) {
