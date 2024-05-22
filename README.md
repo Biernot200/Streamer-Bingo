@@ -19,6 +19,7 @@ Set width and height to **1100** for best textscaling.
 <p align="center">
 <img src="https://github.com/Biernot200/Streamer-Bingo/blob/main/docs/obs-browsersource.jpg" alt="drawing" width="720"/>
 </p>
+
 Confirm your settings and click **interact** to control the game.
 
 <p align="center">
