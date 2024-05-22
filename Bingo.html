@@ -10,7 +10,7 @@
 	--highlight-color: #FEF200;
 	--text-color: black;
 	--text-highlight: black;
-	--set-color: #DCDCDE;
+	--set-color: #C3C4C7;
 	--set-highlight-color: yellowgreen;
 }
 
@@ -19,7 +19,7 @@ html[data-theme='Yellow'] {
 	--highlight-color: #FEF200;
 	--text-color: black;
 	--text-highlight: black;
-	--set-color: #DCDCDE;
+	--set-color: #C3C4C7;
 	--set-highlight-color: yellowgreen;
 }
 
@@ -28,7 +28,7 @@ html[data-theme='Pink'] {
 	--highlight-color: #F7BCCA;
 	--text-color: black;
 	--text-highlight: #333133;
-	--set-color: #DCDCDE;
+	--set-color: #C3C4C7;
 	--set-highlight-color: #AE1F67;
 }
 
@@ -37,7 +37,7 @@ html[data-theme='Red'] {
 	--highlight-color: #8F001D;
 	--text-color: black;
 	--text-highlight: #F0F0F1;
-	--set-color: #DCDCDE;
+	--set-color: #C3C4C7;
 	--set-highlight-color: #560011;
 }
 
@@ -46,7 +46,7 @@ html[data-theme='Purple'] {
 	--highlight-color: #6A5776;
 	--text-color: #2e2633;
 	--text-highlight: white;
-	--set-color: #DCDCDE;
+	--set-color: #C3C4C7;
 	--set-highlight-color: #45394d;
 }
 
@@ -64,8 +64,8 @@ html[data-theme='Light-Blue'] {
 	--highlight-color: #7DCEF7;
 	--text-color: #161637;
 	--text-highlight: #0a0a1a;
-	--set-color: #DCDCDE;
-	--set-highlight-color: #324001;
+	--set-color: #D0DAE1;
+	--set-highlight-color: #416B81;
 }
 
 html[data-theme='Bluish-Grey'] {
@@ -82,8 +82,8 @@ html[data-theme='Green'] {
 	--highlight-color: #1D2327;
 	--text-color: #1D2327;
 	--text-highlight: #BBDCCB;
-	--set-color: #DCDCDE;
-	--set-highlight-color: yellowgreen;
+	--set-color: #8DA69B;
+	--set-highlight-color: #4A5755;
 }
 
 html[data-theme='Orange'] {
@@ -91,7 +91,7 @@ html[data-theme='Orange'] {
 	--highlight-color: #F7BB00;
 	--text-color: #450903;
 	--text-highlight: #450903;
-	--set-color: #DCDCDE;
+	--set-color: #C3C4C7;
 	--set-highlight-color: #450903;
 }
 
@@ -288,18 +288,20 @@ function contextMenu() {
 					break;
 				case "save":
 					if(LoadedBingo) {
-						if(confirm("Overwrite '" + LoadedBingo + "'?") == true) {
+						setTimeout(function(){
+						if(confirm("Confirm to overwrite the fle: '" + LoadedBingo + "'?") == true) {
 							saveBingo(LoadedBingo);
-						}
+						}}, 100);
 						break;
 					}
 				case "saveas":
 					setTimeout(function(){saveasBingo();}, 100);
 					break;
 				case "delete":
-					if(confirm("Do you really want to delete '" + LoadedBingo + "'?") == true) {
-						deleteBingo();
-					}
+					setTimeout(function(){
+						if(confirm("Do you really want to delete '" + LoadedBingo + "'?") == true) {
+							deleteBingo();
+						}}, 100);
 					break;
 				case "import":
 					$('input[type=file]').trigger('click');
@@ -311,7 +313,10 @@ function contextMenu() {
 					copyClipboard();
 					break;
 				case "memclear":
-					localStorage.clear();
+					setTimeout(function(){
+					if(confirm("Are you shure? Any Stored Files will be deleted.") == true) {
+						localStorage.clear();
+					}}, 100);
 					break;
 			}
 		},
@@ -329,7 +334,7 @@ function contextMenu() {
 			"import": {name: "Import"},
 			"export": {name: "Export", "items": {"asfile": {name: "File", disabled: true}, "toclb": {name: "Clipboard"}}},
 			"sep3": "---------",
-			"delall": {name: "Empty cache", "items": {"memclear": {name: "confirm?", icon: "delete"}}},
+			"memclear": {name: "Empty cache"},
 			"quit": {name: "Close", id: "q", icon: function(){
 				return 'context-menu-icon context-menu-icon-quit';
 			}}

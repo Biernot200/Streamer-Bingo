@@ -7,11 +7,9 @@
 A web-based Bingo game, made to use as browsersource for OBS (Open Broadcaster Software).  
 100% offline use, no data will stored or transfered external.
 
-## Preview
+## Preview Demo
 
-* [Preview Demo on github.io][preview-demo]
-
-[preview-demo]: https://htmlpreview.github.io/?https://github.com/Biernot200/Streamer-Bingo/blob/main/Bingo.html
+https://htmlpreview.github.io/?https://github.com/Biernot200/Streamer-Bingo/blob/main/Bingo.html
 
 ## Installation
 
