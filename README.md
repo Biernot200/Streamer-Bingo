@@ -21,6 +21,7 @@ Set width and height to **1100** for best textscaling.
 </p>
 Confirm your settings and click **interact** to control the game.
 
+
 <p align="center">
 <img src="https://github.com/Biernot200/Streamer-Bingo/blob/main/docs/interact.png" alt="drawing" width="417"/>
 </p>
